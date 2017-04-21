@@ -105,6 +105,6 @@
 		<hook type="after_platform_add" src="extra/add-swift-support.js" />
     <hook type="after_plugin_add" src="extra/add-swift-support.js" />
 	</platform>
-	<hook type="after_prepare" src="add-swift-support.js" />
+	<hook type="after_prepare" src="extra/add-swift-support.js" />
 
 </plugin>

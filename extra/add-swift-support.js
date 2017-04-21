@@ -8,7 +8,6 @@
 var
 	fs = require("fs"),
 	path = require("path"),
-	xcode = context.requireCordovaModule('xcode'),
 
 	BUILD_VERSION = '9.0',
 	BUILD_VERSION_XCODE = '"' + BUILD_VERSION + '"',
@@ -54,6 +53,7 @@ function nonComments(obj) {
 
 module.exports = function (context) {
 	var
+    xcode = context.requireCordovaModule('xcode'),
 		projectRoot = context.opts.projectRoot,
 		projectName = getProjectName(projectRoot),
 		xcconfigPath = path.join(projectRoot, '/platforms/ios/cordova/build.xcconfig'),
