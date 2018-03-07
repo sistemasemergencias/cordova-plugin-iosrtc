@@ -34,7 +34,8 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 		self.elementView.layer.masksToBounds = true
 
 		self.videoView.isUserInteractionEnabled = false
-		self.videoView.mediaPlaybackRequiresUserAction = false
+		self.videoView.AllowsInlineMediaPlayback = true
+		self.videoView.MediaTypesRequiringUserActionForPlayback = WKAudiovisualMediaTypes.None
 		
 		// Place the video element view inside the WebView's superview
 		self.webView.superview?.addSubview(self.elementView)
