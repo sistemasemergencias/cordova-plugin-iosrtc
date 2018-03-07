@@ -29,8 +29,8 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 
 		self.elementView.isUserInteractionEnabled = false
 		
-		self.webView.allowsInlineMediaPlayback = YES;
-		self.webView.mediaPlaybackRequiresUserAction = NO;
+		self.webView.superview?.allowsInlineMediaPlayback = YES;
+		self.webView.superview?.mediaPlaybackRequiresUserAction = NO;
 		
 		self.elementView.isHidden = true
 		self.elementView.backgroundColor = UIColor.black
