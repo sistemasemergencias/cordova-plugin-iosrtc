@@ -34,7 +34,8 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 		self.elementView.layer.masksToBounds = true
 
 		self.videoView.isUserInteractionEnabled = false
-
+		self.videoView.mediaPlaybackRequiresUserAction = false
+		
 		// Place the video element view inside the WebView's superview
 		self.webView.superview?.addSubview(self.elementView)
 	}
@@ -191,14 +192,6 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 		// if the zIndex is 0 (the default) bring the view to the top, last one wins
 		if zIndex == 0 {
 			self.webView.superview?.sendSubview(toBack: self.elementView)
-		} 
-		
-		if zIndex == -2 {
-			self.elementView.isHidden = true
-		} 
-		
-		if zIndex == -3 {
-			self.elementView.isHidden = true
 		} 
 
 		if !mirrored {
