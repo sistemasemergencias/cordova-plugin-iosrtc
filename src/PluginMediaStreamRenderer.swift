@@ -4,6 +4,7 @@ import AVFoundation
 
 class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 	var webView: UIView
+	var webSuperView: UIWebView
 	var eventListener: (_ data: NSDictionary) -> Void
 	var elementView: UIView
 	var videoView: RTCEAGLVideoView
@@ -20,6 +21,8 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 
 		// The browser HTML view.
 		self.webView = webView
+		self.webSuperView = self.webView.superview?
+		
 		self.eventListener = eventListener
 		// The video element view.
 		self.elementView = UIView()
@@ -29,8 +32,8 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 
 		self.elementView.isUserInteractionEnabled = false
 		
-		self.webView.superview?.allowsInlineMediaPlayback = YES;
-		self.webView.superview?.mediaPlaybackRequiresUserAction = NO;
+		self.webSuperView.allowsInlineMediaPlayback = YES;
+		self.webSuperView.mediaPlaybackRequiresUserAction = NO;
 		
 		self.elementView.isHidden = true
 		self.elementView.backgroundColor = UIColor.black
