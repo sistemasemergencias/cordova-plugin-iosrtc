@@ -158,15 +158,24 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 
 		let videoViewLeft: Float = (elementWidth - videoViewWidth) / 2
 		let videoViewTop: Float = (elementHeight - videoViewHeight) / 2
-
+		/*
 		self.elementView.frame = CGRect(
 			x: CGFloat(elementLeft),
 			y: CGFloat(elementTop),
 			width: CGFloat(elementWidth),
 			height: CGFloat(elementHeight)
 		)
-
+		*/
+		
+		self.elementView.frame = CGRect(
+			x: CGFloat(0),
+			y: CGFloat(0),
+			width: CGFloat(0),
+			height: CGFloat(0)
+		)
+		
 		// NOTE: Avoid a zero-size UIView for the video (the library complains).
+		
 		if videoViewWidth == 0 || videoViewHeight == 0 {
 			videoViewWidth = 1
 			videoViewHeight = 1
@@ -174,7 +183,8 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 		} else {
 			self.videoView.isHidden = false
 		}
-
+		
+		
 		self.videoView.frame = CGRect(
 			x: CGFloat(videoViewLeft),
 			y: CGFloat(videoViewTop),
@@ -195,8 +205,6 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 		if zIndex == 0 {
 			self.webView.superview?.sendSubview(toBack: self.elementView)
 		} 
-		
-		self.webView.superview?.sendSubview(toBack: self.videoView)
 
 		if !mirrored {
 			self.elementView.transform = CGAffineTransform.identity
