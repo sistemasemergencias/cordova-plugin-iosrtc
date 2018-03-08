@@ -158,20 +158,12 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 
 		let videoViewLeft: Float = (elementWidth - videoViewWidth) / 2
 		let videoViewTop: Float = (elementHeight - videoViewHeight) / 2
-		/*
+		
 		self.elementView.frame = CGRect(
 			x: CGFloat(elementLeft),
 			y: CGFloat(elementTop),
 			width: CGFloat(elementWidth),
 			height: CGFloat(elementHeight)
-		)
-		*/
-		
-		self.elementView.frame = CGRect(
-			x: CGFloat(0),
-			y: CGFloat(0),
-			width: CGFloat(0),
-			height: CGFloat(0)
 		)
 		
 		// NOTE: Avoid a zero-size UIView for the video (the library complains).
@@ -184,14 +176,21 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 			self.videoView.isHidden = false
 		}
 		
-		
+		/*
 		self.videoView.frame = CGRect(
 			x: CGFloat(videoViewLeft),
 			y: CGFloat(videoViewTop),
 			width: CGFloat(videoViewWidth),
 			height: CGFloat(videoViewHeight)
 		)
-
+		*/	
+		self.videoView.frame = CGRect(
+			x: CGFloat(0),
+			y: CGFloat(0),
+			width: CGFloat(0),
+			height: CGFloat(0)
+		)
+		
 		if visible {
 			self.elementView.isHidden = false
 		} else {
