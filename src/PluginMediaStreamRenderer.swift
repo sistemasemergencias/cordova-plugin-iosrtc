@@ -4,7 +4,6 @@ import AVFoundation
 
 class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 	var webView: UIView
-	var webSuperView: UIWebView
 	var eventListener: (_ data: NSDictionary) -> Void
 	var elementView: UIView
 	var videoView: RTCEAGLVideoView
