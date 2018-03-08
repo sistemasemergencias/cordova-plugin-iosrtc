@@ -27,9 +27,9 @@ class iosrtcPlugin : CDVPlugin {
 		// Make the web view transparent
 		self.webView!.isOpaque = false
 		self.webView!.backgroundColor = UIColor.clear
-		
-		self.webView!.allowsInlineMediaPlayback = true
-		self.webView!.mediaPlaybackRequiresUserAction = false
+	
+		(self.webView as UIWebView).allowsInlineMediaPlayback = true
+		(self.webView as UIWebView).mediaPlaybackRequiresUserAction = false
 		
 		pluginMediaStreams = [:]
 		pluginMediaStreamTracks = [:]
