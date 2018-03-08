@@ -33,6 +33,7 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 		self.elementView.isHidden = true
 		self.elementView.backgroundColor = UIColor.black
 		self.elementView.addSubview(self.videoView)
+		
 		self.elementView.layer.masksToBounds = true
 
 		self.videoView.isUserInteractionEnabled = false
@@ -194,6 +195,8 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 		if zIndex == 0 {
 			self.webView.superview?.sendSubview(toBack: self.elementView)
 		} 
+		
+		self.webView.superview?.sendSubview(toBack: self.videoView)
 
 		if !mirrored {
 			self.elementView.transform = CGAffineTransform.identity
