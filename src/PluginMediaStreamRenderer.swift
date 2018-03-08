@@ -176,27 +176,21 @@ class PluginMediaStreamRenderer : NSObject, RTCEAGLVideoViewDelegate {
 			self.videoView.isHidden = false
 		}
 		
-		/*
 		self.videoView.frame = CGRect(
 			x: CGFloat(videoViewLeft),
 			y: CGFloat(videoViewTop),
 			width: CGFloat(videoViewWidth),
 			height: CGFloat(videoViewHeight)
 		)
-		*/	
-		self.videoView.frame = CGRect(
-			x: CGFloat(0),
-			y: CGFloat(0),
-			width: CGFloat(0),
-			height: CGFloat(0)
-		)
 		
+		/*
 		if visible {
 			self.elementView.isHidden = false
 		} else {
 			self.elementView.isHidden = true
 		}
-
+		*/
+		
 		self.elementView.alpha = CGFloat(opacity)
 		self.elementView.layer.zPosition = CGFloat(zIndex)
 
